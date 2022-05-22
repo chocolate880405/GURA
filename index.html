@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gawr Gura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./bootstrap-4.2.1-dist/css/bootstrap.css" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+</head>
+<style>
+    body{
+        font-family: 'Patrick Hand', cursive;
+        letter-spacing: 0.1em;
+        max-width: 1600px;
+        min-width: 375px;
+        margin: auto;
+        /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+        background-image: url(./gura/fixed_bg.png);
+        background-blend-mode:darken;
+    }
+    .row{
+        margin-right:0px;
+        margin-left: 0px;
+    }
+    .colordb{
+        color: #44809D;
+    }
+    .yellow{
+        position: absolute;
+        width: 150px;
+        height: 50px;
+        background-color: #fcf5d285;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    .colorlb{
+        color: #ACD6E4;
+    }
+    .logo,.top-bg,.first,.second,.third{
+        width: 100%;
+        overflow: hidden;
+    }
+    .first,.second,.third{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        filter:drop-shadow(0px -10px 4px rgba(0, 0, 0, 0.25));
+    }
+    .top-bg img,.first img,.second img,.third img{
+        width: 100%;
+        object-fit:cover;
+    }
+    .top-phone{
+        height: 85vh;
+        overflow: hidden;
+    }
+    .top-bg-phone{
+        width: 100%;
+    }
+    .top-bg-phone img{
+        width: 100%;
+        object-fit: cover;
+    }
+    .logo{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom:20%;
+    }
+    .logo img{
+        width: 40%;
+    }
+    .navbar{
+        background-color: #ACD6E4;
+        overflow: hidden;
+        height: 128px;
+        padding-right: 20px;
+        padding-left: 40px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .nav-bar-phone{
+        height: 15vh;
+        background-color: #ACD6E4;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .logo-phone{
+        position:absolute;
+        top:-30%;
+        padding-left: 20px;
+    }
+    .nav-bar-phone img{
+        width: 70%;
+        object-fit: cover;
+        margin-left: 10px;
+        padding: 5px;
+    }
+    .phone-select{
+        height: 100%;
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    .bloop{
+        width: 20%;
+    }
+    .bloop img{
+        width: 90%;
+    }
+    .phone-select-right{
+        display: flex;
+    }
+    .phone-select-right.white{
+        display: none;
+    }
+    .phone-select-right p{
+        color: #44809D;
+        background-image: url(./gura/11.png);
+        background-size: cover;
+        text-align: center;
+        width: 100px;
+        padding: 10px;
+        margin-bottom: 0;
+    }
+    .s-logo{
+        width:20%;
+    }
+    .s-logo img{
+        width:80%;
+        object-fit:cover;
+    }
+    .nav-select{
+        width: 60%;
+        padding: 0;
+        margin-bottom: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+    }
+    .nav-select li{
+        text-align: center;
+        width: 25%;
+        font-size: 24px;
+        padding: 12px 10px 10px 10px;
+        background-image: url(./gura/11.png);
+        background-size: cover;
+    }
+    .fa-youtube{
+        width: 10%;
+        text-align: center;
+        font-size: 64px;
+    }
+    .pc-intro,.mobile-intro{
+        padding-top: 60px;
+        padding-bottom: 40px;
+        background-image: url(./gura/background.jpg);
+    }
+    .intro1{
+        top: -5%;
+        left: 30%;
+        transform:rotate(5deg);
+    }
+    .intro-img1{
+        width: 80%;
+    }
+    .intro-img{
+        justify-content: end;
+    }
+    .intro-img1 img{
+        width: 100%;
+        object-fit: cover;
+        filter: drop-shadow(-2px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .intro-text{
+        display: flex;
+        flex-direction: column;
+        padding-left:80px;
+    }
+    .intro-text h1{
+        font-size: 64px;
+        color: #44809D;
+    }
+    .intro-text p{
+        width: 80%;
+        font-size: 32px;
+    }
+    .time-list,.outfit{
+        padding-top: 60px;
+        padding-bottom:60px ;
+        background-image: url(./gura/background.jpg);
+    }
+    .time-image img{
+        width: 90%;
+        object-fit: cover;
+        filter: drop-shadow(-2px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+    .time{
+        font-size:24px;
+    }
+    .thing{
+        font-size: 64px;
+        color: #44809D;
+        line-height: 0.8em;
+        text-align: center;
+    }
+    .time1{
+        top: -8%;
+        left: 30%;
+        transform:rotate(5deg);
+    }
+    .time2{
+        top: -8%;
+        left: 40%;
+        transform:rotate(5deg);
+    }
+    .wrap{
+        width: 85%;
+        margin:auto;
+    }
+    .wrap1{
+        width: 100%;
+        overflow: hidden;
+    }
+    .white{
+        height: 20%;
+    }
+    .train{
+        width: 400%;
+        /* transform: translateX(-1100px); */
+    }
+    .outfit-page{
+        width: 25%;
+    }
+    .outfit h1{
+        z-index:998 ;
+        font-size: 64px;
+        color: #44809D;
+        left: 10%;
+    }
+    .outfit-img img{
+        width: 90%;
+        object-fit: cover;
+    }
+    .mama img{
+        width: 116px;
+        height: 116px;
+    }
+    .mama p{
+        font-size: 24px;
+        text-align: center;
+    }
+    .outfit1{
+        background-color: rgba(255, 255, 255, 0.801);
+        background-blend-mode:lighten;
+        background-image: url(./gura/20200913.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .outfit2{
+        background-color: rgba(255, 255, 255, 0.801);
+        background-blend-mode:lighten;
+        background-image: url(./gura/outfit2-background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .outfit3{
+        background-color: rgba(255, 255, 255, 0.801);
+        background-blend-mode:lighten;
+        background-image: url(./gura/outfit3-background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .outfit4{
+        background-color: rgba(255, 255, 255, 0.801);
+        background-blend-mode:lighten;
+        background-image: url(./gura/outfit4-background.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .product{
+        padding-top: 100px;
+        padding-bottom:400px ;
+        background-image: url(./gura/background.jpg);
+    }
+    .product h1{
+        font-size: 64px;
+        color: #44809D;
+        top: 0;
+        left: 10%;
+    }
+    .phone-shop{
+        width: 80%;
+        
+    }
+    .product-item{
+        display: flex;
+        width: 49%;
+        height: 150px;
+        margin-top: 5px;
+        border-radius: 30px;
+        filter: drop-shadow(-2px 4px 4px rgba(0, 0, 0, 0.25));
+        overflow: hidden;
+        background-color: #fff;
+    }
+    .product-item1 {
+        display:none;
+    width: 49%;
+    height: 500px;
+    margin-top: 5px;
+    border-radius: 30px;
+    filter: drop-shadow(-2px 4px 4px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    background-color: #fff;
+}
+.product-item1.show{
+    display: flex;
+}
+.product-item.hide{
+    display: none;
+}
+.product-top{
+    height: 150px;
+    background-color: #ACD6E4;
+    filter: drop-shadow(-2px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.product-top p {
+    font-size: 24px;
+    padding: 20px;
+}
+.product-top span {
+    right: 20px;
+    bottom: 0;
+    font-size: 32px;
+    color: #44809D;
+    font-weight: 900;
+}
+.product-small{
+    height: 350px;
+    
+}
+.product-small img{
+    height: 80%;
+    margin: auto;
+}
+    .product-img{
+        width: 150px;
+    }
+    .product-intro{
+        width: 70%;
+    }
+    .product-img img{
+        object-fit:cover;
+        width: 100%;
+        height: 100%;
+    }
+    .product-intro span{
+        right:0;
+        bottom: 0;
+        font-size: 32px;
+        color: #44809D;
+        font-weight: 900;
+    }
+    .product-intro p{
+        font-size: 24px;
+    }
+    .switch{
+        width: 300px;
+        background-color: #ACD6E4;
+        border-radius:0 10px 10px 0;
+        justify-content: end;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    .switch img{
+        width: 50px;height: 50px;
+        background-color: #fff;
+        margin: 5px;
+        border-radius: 10px;
+    }
+    .nav-bar-phone,.head-phone,.history1,.clothes1,.mobile-intro{
+        display: none;
+    }
+    .bar.fixed{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            z-index: 999;
+        }
+    .nav-bar-phone.fixed1{
+            position: fixed;
+            top: 0;
+            left:0;
+            width: 100%;
+            z-index: 999;
+            height:10vh;
+    }
+
+    @media(max-width: 960px){
+        .yellow{
+        width: 100px;
+        height: 30px;
+        }
+        .intro-text h1,.outfit h1,.product h1,.thing{
+        font-size: 48px;
+        }
+        .intro-text p,.mama p,.product-intro p{
+        font-size: 20px;
+        }
+        .product-intro p{
+        line-height: 1em;
+        }
+        .product-intro span{
+        font-size: 24px;
+        }
+        .intro-text{
+        padding-left:50px;
+        }
+        .mama img{
+        width: 80px;
+        height: 80px;
+        }
+    }
+    @media(max-width: 768px){
+        .product-item{
+        height: 120px;
+        width: 100%;
+        }
+        .product-item1{
+        width: 100%;
+        }
+        .product-top{
+            height: 120px;
+        }
+        .product-top p{
+        line-height: 1em;
+        }
+        .product-top span{
+        font-size: 24px;
+        }
+        .product-img{
+        width: 120px;
+        }
+        .navbar{
+            height: 90px;
+        }
+        .nav-select li{
+        font-size: 20px;
+        padding: 12px 10px 10px 15px;
+        }
+        .nav-select{
+        width: 65%;
+        }
+        .time{
+        margin-bottom: 0;
+        }
+        .mama p{
+            font-size: 16px;
+        }
+    }
+    @media(max-width: 668px){
+        .mama img{
+        width: 60px;
+        height: 60px;
+        }
+        .intro-text p,.mama p,.product-intro p{
+        line-height: 1.2em;
+        }
+        .nav-select li{
+        font-size: 18px;
+        padding: 12px 10px 10px 15px;
+        }
+        .time-image img{
+        width: 100%;
+        }
+        .fa-youtube{
+        font-size: 48px;
+        }
+        .navbar{
+        padding-right: 10px;
+        padding-left: 30px;
+        }
+        .mama p{
+            font-size: 12px;
+        }
+    }
+    @media(max-width: 576px){
+        .product h1{
+            top: 7%;
+            left: 10%;
+        }
+        .nav-bar-phone,.head-phone,.history1,.clothes1,.mobile-intro{
+            display: block;
+        }
+        .head,.bar,.history,.clothes,.pc-intro{
+            display: none;
+        }
+        .intro-text h1,.outfit h1,.product h1,.thing{
+        font-size: 32px;
+        }
+        .intro-text p,.mama p,.product-intro p{
+        font-size: 20px;
+        }
+        .intro-text p{
+        width: 100%;
+        }
+        .intro-text{
+        padding-left:20px;
+        }
+        .time-list{
+        padding-top: 20px;
+        padding-bottom:20px;
+        }
+        .outfit{
+        padding-top: 130px;
+        padding-bottom:20px;
+        }
+        .outfit h1{
+            top: 10%;
+        }
+        .intro1{
+        top: -10%;
+        left: 20%;
+        transform:rotate(5deg);
+        }
+        .time{
+            font-size: 20px;
+            margin: 0;
+        }
+        .time2{
+        top: -10%;
+        left: 30%;
+        transform:rotate(5deg);
+        }
+        .outfit1{
+        height: 70vh;
+        }
+        .outfit-img{
+            width: 380px;
+            left: -5%;
+            bottom:0;
+        }
+        .outfit1{
+        background-color: rgba(255, 255, 255, 0.801);
+        background-blend-mode:lighten;
+        background-image: url(./gura/20200913.png);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        }
+        .product{
+            height:95vh;
+        }
+        .product-item {
+            border-radius: 20px;
+        }
+    }
+    @media(max-width: 528px){
+    .phone-select-right p{
+        width: 70px;
+        padding: 10px;
+    }
+    }
+    @media(max-width: 480px){
+        .intro{
+        flex-direction: column;
+        }
+        .intro-img{
+            justify-content: center;
+        }
+        .intro-img1 {
+        width: 50%;
+        }
+        .intro-text{
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+        .product-item{
+        height: 100px;
+        }
+        .product-top{
+        height: 100px;
+        }
+        .product-img{
+        width: 100px;
+        }
+        .product-intro span,.product-top span{
+            font-size: 20px;
+        }
+        .product-intro p,.product-top p{
+            font-size: 18px;
+        }
+        .yellow{
+        width: 80px;
+        height: 20px;
+        }
+        .time2{
+        top: -15%;
+        left: 25%;
+        }
+        .intro1{
+        top: -5%;
+        left: 25%;
+    }
+    }
+    @media(max-width: 425px){
+        .outfit-img{
+            width: 300px;
+            left: -5%;
+            bottom:10%;
+        }
+        .phone-shop {
+            width: 85%;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container-fluild head">
+            <div class="row top position-relative">
+                <div class="logo">
+                    <img id="up" src="./gura/logo1.png" alt="">
+                </div>
+                <div class="top-bg">
+                    <img src="./gura/pc-topbackground.png" alt="">
+                </div>
+                <div class="third">
+                    <img src="./top-third1.png" alt="">
+                </div> 
+                <div class="second">
+                    <img src="./top-second1.png" alt="">
+                </div>
+                <div class="first">
+                    <img src="./top-first1.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluild head-phone">
+            <div class="row position-relative top-phone">
+                <div class="top-bg-phone">
+                    <img src="./gura/phone-topbackground2.png" alt="">
+                </div>
+                <div class="third">
+                    <img src="./top-third-phone.png" alt="">
+                </div> 
+                <div class="second">
+                    <img src="./top-second-phone.png" alt="">
+                </div>
+                <div class="first">
+                    <img src="./top-first-phone.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="container-fluild bar">
+            <div class="row navbar">
+                <div class="s-logo">
+                    <img src="./gura/logo1.png" alt="">
+                </div>
+                <ul class="nav-select d-flex colordb">
+                    <li id="home">HOME</li>
+                    <li id="intro">INTRO</li>
+                    <li id="outfit">OUTFIT</li>
+                    <li id="product">PRODUCT</li>
+                </ul>
+                <i class="fa-brands fa-youtube colordb"></i>
+            </div>
+        </div>
+        <div class="container-fluild nav-bar-phone">
+            <div class="row  position-relative">
+                <div class="logo-phone">
+                    <img src="./gura/logo1.png" alt="">
+                </div>
+                    <div class="phone-select">
+                        <div class="phone-select-right white">
+                            <p id="home1">HOME</p>
+                            <p id="intro1">INTRO</p>
+                            <p id="outfit1">OUTFIT</p>
+                            <p id="product1">PRODUCT</p>
+                        </div>
+                        <div class="bloop">
+                            <img src="./gura/bloop.png" alt="">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluild pc-intro">
+        <div class="row intro">
+            <div class="intro-img col col-sm-5 d-flex align-items-center">
+                <div class="intro-img1 position-relative">
+                    <img src="./gura/intro.jpg" alt="">
+                    <div class="yellow intro1"></div>
+                </div>
+            </div>
+            <div class="intro-text col col-sm-7">
+                <h1>Gawr Gura</h1>
+                <p>A descendant of the Lost City of Atlantis, who swam to Earth while saying, 
+                    "It's so boring down there LOLOLOL!" Gura bought her clothes (and her shark hat) 
+                    in the human world and she really loves them. In her spare time, she enjoys talking to marine life.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluild mobile-intro">
+        <div class="row intro">
+            <div class="intro-img col col-sm-5 d-flex align-items-center">
+                <div class="intro-img1 position-relative">
+                    <img src="./gura/intro.jpg" alt="">
+                    <div class="yellow intro1"></div>
+                </div>
+            </div>
+            <div class="intro-text col col-sm-7">
+                <h1>Gawr Gura</h1>
+                <p>A descendant of the Lost City of Atlantis, who swam to Earth while saying, 
+                    "It's so boring down there LOLOLOL!" Gura bought her clothes (and her shark hat) 
+                    in the human world and she really loves them. In her spare time, she enjoys talking to marine life.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluild history">
+        <div class="time-list row flex-column">
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2020/09/13</p>
+                    <p class="thing d-flex justify-content-center">Debut stream</p>
+                </div>
+                <div class="col-5 time-image position-relative">
+                    <img src="./gura/20200913.png" alt="">
+                    <div class="yellow time1"></div>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20201023.jpg" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2020/10/22</p>
+                    <p class="thing d-flex justify-content-center">1 million subscribers </p>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2021/01/18</p>
+                    <p class="thing d-flex justify-content-center">2 million subscribers </p>
+                </div>
+                <div class="col-5 time-image position-relative">
+                    <img src="./gura/20210118.jpg" alt="">
+                    <div class="yellow time1"></div>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20210704.jpg" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2021/07/04</p>
+                    <p class="thing d-flex justify-content-center">3 million subscribers </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluild history1">
+        <div class="time-list row flex-column">
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20200913.png" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2020/09/13</p>
+                    <p class="thing d-flex justify-content-center">Debut stream </p>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20201023.jpg" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2020/10/22</p>
+                    <p class="thing d-flex justify-content-center">1 million subscribers </p>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20210118.jpg" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2021/01/18</p>
+                    <p class="thing d-flex justify-content-center">2 million subscribers </p>
+                </div>
+            </div>
+            <div class="time-list d-flex align-items-center justify-content-center">
+                <div class="col-5 time-image position-relative d-flex justify-content-end">
+                    <img src="./gura/20210704.jpg" alt="">
+                    <div class="yellow time2"></div>
+                </div>
+                <div class="col-5 d-flex flex-column">
+                    <p class="time d-flex justify-content-center">2021/07/04</p>
+                    <p class="thing d-flex justify-content-center">3 million subscribers </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container-fluild clothes">
+        <div class="row outfit position-relative">
+            <h1 class="position-absolute">About Outfit</h1>
+            <div class="wrap overflow-hidden">
+                <div class="train d-flex">
+                    <div class="outfit-page outfit1 d-flex justify-content-center">
+                        <div class="col-5 d-flex flex-column justify-content-between">
+                            <div class="white"></div>
+                            <div>
+                                <p class="time d-flex justify-content-center">2020/09/13</p>
+                                <p class="thing d-flex justify-content-center">ORIGNAL </p>
+                            </div>
+                            <div class="draw d-flex justify-content-around">
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/mama.jpg" alt="">
+                                    <p>Illustration:<br> Amashiro Natsuki</p>
+                                </div>
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/papa.jpg" alt="">
+                                    <p>Modelling:<br> Shin Umiushi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outfit-img col-5 d-flex justify-content-center">
+                            <img src="./gura/clothes1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="outfit-page outfit2 d-flex justify-content-center">
+                        <div class="col-5 d-flex flex-column justify-content-between">
+                            <div class="white"></div>
+                            <div>
+                                <p class="time d-flex justify-content-center">2021/05/07</p>
+                                <p class="thing d-flex justify-content-center">CAT SHARK </p>
+                            </div>
+                            <div class="draw d-flex justify-content-around">
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/mama.jpg" alt="">
+                                    <p>Illustration:<br> Amashiro Natsuki</p>
+                                </div>
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/papa.jpg" alt="">
+                                    <p>Modelling:<br> Shin Umiushi</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outfit-img col-5 d-flex justify-content-center">
+                            <img src="./gura/clothes2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="outfit-page outfit3 d-flex justify-content-center">
+                        <div class="col-5 d-flex flex-column justify-content-between">
+                            <div class="white"></div>
+                            <div>
+                                <p class="time d-flex justify-content-center">2021/12/12</p>
+                                <p class="thing d-flex justify-content-center">ATLANTIS </p>
+                            </div>
+                            <div class="draw d-flex justify-content-around">
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/mama.jpg" alt="">
+                                    <p>Illustration:<br>Amashiro Natsuki</p>
+                                </div>
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/papa1.jpg" alt="">
+                                    <p>Modelling:<br>Brian Tsuii</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outfit-img col-5 d-flex justify-content-center">
+                            <img src="./gura/clothes3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="outfit-page outfit4 d-flex justify-content-center">
+                        <div class="col-5 d-flex flex-column justify-content-between">
+                            <div class="white"></div>
+                            <div>
+                                <p class="time d-flex justify-content-center">2022/01/19</p>
+                                <p class="thing d-flex justify-content-center">NEWYEAR</p>
+                            </div>
+                            <div class="draw d-flex justify-content-around">
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/mama.jpg" alt="">
+                                    <p>Illustration:<br>Amashiro Natsuki</p>
+                                </div>
+                                <div class="mama d-flex flex-column align-items-center">
+                                    <img src="./gura/papa1.jpg" alt="">
+                                    <p>Modelling:<br>Brian Tsuii</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="outfit-img col-5 d-flex justify-content-center">
+                            <img src="./gura/clothes4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluild clothes1">
+        <div class="row outfit position-relative">
+            <h1 class="position-absolute">About Outfit</h1>
+            <div class="switch d-flex">
+                <img id="mobile-clothes1" src="./gura/head-outfit1.png" alt="">
+                <img id="mobile-clothes2" src="./gura/head-outfit2.png" alt="">
+                <img id="mobile-clothes3" src="./gura/head-outfit3.png" alt="">
+                <img id="mobile-clothes4" src="./gura/head-outfit4.png" alt="">
+            </div>
+            <div class="wrap1">
+                <div class="train d-flex">
+                    <div class="outfit-page outfit1 d-flex justify-content-end  position-relative">
+                        <div class="outfit-img position-absolute">
+                            <img src="./gura/clothes1.png" alt="" id="outfit-images1">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mr-5">
+                            <div>
+                                <p class="time d-flex justify-content-center" id="outfit-time">2020/09/13</p>
+                                <p class="thing d-flex justify-content-center" id="outfit-thing">ORIGNAL </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluild">
+        <div class="row product position-relative justify-content-center">
+            <h1 class="position-absolute">PRODUCT</h1>
+            <div class="d-flex flex-wrap phone-shop justify-content-between">
+                <div class="product-item justify-content-start">
+                    <div class="product-img">
+                        <img src="./gura/head-product.jpg" alt="">
+                    </div>
+                    <div class="product-intro d-flex flex-column  ml-2 position-relative">
+                        <p>"Gawr Gura Birthday 2021" Commemorative goods & voice complete pack </p>
+                        <span class="position-absolute">¥11,000 JPY</span>
+                    </div>
+                </div>
+                <div class="product-item1 flex-column">
+                    <div class="product-top position-relative">
+                        <p>"Gawr Gura Birthday 2021" Commemorative goods & voice complete pack </p>
+                        <span class="position-absolute">¥11,000 JPY</span>
+                    </div>
+                    <div class="product-small d-flex flex-column">
+                        <img src="./gura/gawr-ssmile.gif" alt="">
+                    </div>
+                </div>
+                <div class="product-item justify-content-start ">
+                    <div class="product-img">
+                        <img src="./gura/head-product.jpg" alt="">
+                    </div>
+                    <div class="product-intro d-flex flex-column ml-2 position-relative">
+                        <p>"Gawr Gura Birthday 2021" Commemorative voice</p>
+                        <span class="position-absolute">¥1,000 JPY</span>
+                    </div>
+                </div>
+                <div class="product-item1 flex-column">
+                    <div class="product-top position-relative">
+                        <p>"Gawr Gura Birthday 2021" Commemorative voice</p>
+                        <span class="position-absolute">¥1,000 JPY</span>
+                    </div>
+                    <div class="product-small d-flex flex-column">
+                        <img src="./gura/gura-smile.gif" alt="">
+                    </div>
+                </div>
+                <div class="product-item justify-content-start ">
+                    <div class="product-img">
+                        <img src="./gura/head-product2.png" alt="">
+                    </div>
+                    <div class="product-intro d-flex flex-column ml-2 position-relative">
+                        <p> "Gawr Gura Birthday 2021" Full Graphic T-shirt (Design by Icomochi-sensei)</p>
+                        <span class="position-absolute">¥5,000 JPY</span>
+                    </div>
+                </div>
+                <div class="product-item1 flex-column">
+                    <div class="product-top position-relative">
+                        <p>"Gawr Gura Birthday 2021" Full Graphic T-shirt (Design by Icomochi-sensei) </p>
+                        <span class="position-absolute">¥5,000 JPY</span>
+                    </div>
+                    <div class="product-small d-flex flex-column">
+                        <img src="./gura/gura-song.gif" alt="">
+                    </div>
+                </div>
+                <div class="product-item justify-content-start ">
+                    <div class="product-img">
+                        <img src="./gura/head-product3.jpg" alt="">
+                    </div>
+                    <div class="product-intro d-flex flex-column ml-2 position-relative">
+                        <p> "Gawr Gura Birthday 2021" Cheek Mousepad (Art by Icomochi-sensei)</p>
+                        <span class="position-absolute">¥5,000 JPY</span>
+                    </div>
+                </div>
+                <div class="product-item1 flex-column">
+                    <div class="product-top position-relative">
+                        <p>"Gawr Gura Birthday 2021" Cheek Mousepad (Art by Icomochi-sensei)</p>
+                        <span class="position-absolute">¥5,000 JPY</span>
+                    </div>
+                    <div class="product-small d-flex flex-column">
+                        <img src="./gura/gura-eye.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var navh = $('.bar').offset().top;
+        $(window).resize(function () {
+            if ($('.bar').hasClass('fixed')) {
+                navOffsetTop = $('.bar').removeClass('fixed').offset().top;
+                $('.bar').addClass('fixed');
+            }
+            else {
+                navOffsetTop = $('.bar').removeClass('fixed').offset().top;
+            }
+        })
+        $(window).scroll(function () {
+            console.log('windowtop',$(window).scrollTop());
+            console.log('bartop',$('.bar').offset().top);
+            if ($(window).scrollTop() >= navh) {
+                $('.bar').addClass('fixed');
+                $('.pc-intro').css('padding-top',260);
+            }
+            else {
+                $('.bar').removeClass('fixed');
+                $('.pc-intro').css('padding-top',60)
+            }
+        })
+    </script> 
+    <script>
+        var navhh = $('.nav-bar-phone').offset().top;
+        $(window).resize(function () {
+            if ($('.nav-bar-phone').hasClass('fixed1')) {
+                navOffsetTopp = $('.nav-bar-phone').removeClass('fixed1').offset().top;
+                $('.nav-bar-phone').addClass('fixed1');
+            }
+            else {
+                navOffsetTopp = $('.nav-bar-phone').removeClass('fixed1').offset().top;
+            }
+        })
+        $(window).scroll(function () {
+            console.log('windowtop',$(window).scrollTop());
+            console.log('bartop',$('.nav-bar-phone').offset().top);
+            if ($(window).scrollTop() >= navhh) {
+                $('.nav-bar-phone').addClass('fixed1');
+                $('.logo-phone').css('top',5).css('width',280);
+                $('.mobile-intro').css('padding-top',160);
+            }
+            else {
+                $('.nav-bar-phone').removeClass('fixed1');
+                $('.logo-phone').css('top','-30%').css('width','100%');
+                $('.mobile-intro').css('padding-top',60)
+            }
+        })
+    </script>
+    <script>
+        $('.bloop').click(function () {
+            console.log($(this));
+            if ($('.phone-select-right').hasClass('white')) {
+                $('.phone-select-right').removeClass('white');
+                $('.logo-phone').hide();
+            }
+            else {
+                $('.phone-select-right').addClass('white');
+                $('.logo-phone').show();
+            }
+        })
+        $('.phone-select-right').click(function(){
+            if (!$('.phone-select-right').hasClass('white')){
+                $('.phone-select-right').addClass('white');
+                $('.logo-phone').show();
+            }
+        })
+    </script>
+    <script>
+        $('#home').click(function(){
+            console.log($(this));
+            $('html, body').scrollTop(0);    
+        })
+        $('#intro').click(function(){
+            introh=$('.pc-intro').offset().top;
+            $('html, body').scrollTop(introh);
+        })
+        $('#outfit').click(function(){
+            console.log($(this));
+            outh=$('.clothes').offset().top-80;
+            $('html, body').scrollTop(outh);
+        })
+        $('#product').click(function(){
+            console.log($(this));
+            prodh=$('.product').offset().top-120;
+            $('html, body').scrollTop(prodh);
+        })
+    </script>
+    <script>
+        $('#home1').click(function(){
+            console.log($(this));
+            $('html, body').scrollTop(0);    
+        })
+        $('#intro1').click(function(){
+            console.log($(this));
+            $('html, body').scrollTop($('.mobile-intro').offset().top+20);
+        })
+        $('#outfit1').click(function(){
+            console.log($(this));
+            outh=$('.clothes1').offset().top-20;
+            $('html, body').scrollTop(outh);
+        })
+        $('#product1').click(function(){
+            console.log($(this));
+            prodh=$('.product').offset().top-30;
+            $('html, body').scrollTop(prodh);
+        })
+    </script>
+    <script>
+        $('#up').click(function(){
+            introh=$('.pc-intro').offset().top-120;
+            $('html, body').scrollTop(introh);
+        })
+        $('.logo-phone').click(function(){
+            if ($('.phone-select-right').hasClass('white')) {
+                $('.phone-select-right').removeClass('white');
+                $('.logo-phone').hide();
+            }
+            else {
+                $('.phone-select-right').addClass('white');
+                $('.logo-phone').show();
+            }
+        })
+    </script>
+    <script>
+        $('#mobile-clothes1').click(function(){
+            console.log(this);
+            $('#outfit-images1').attr('src','./gura/clothes1.png');
+            $('#outfit-time').text('2020/09/13');
+            $('#outfit-thing').text('ORIGNAL');
+            $('.outfit1').css('background-image','url(./gura/20200913.png)')
+        })
+        $('#mobile-clothes2').click(function(){
+            console.log(this);
+            $('#outfit-images1').attr('src','./gura/clothes2.png');
+            $('#outfit-time').text('2021/05/07');
+            $('#outfit-thing').text('CAT SHARK');
+            $('.outfit1').css('background-image','url(./gura/outfit2-background.png)')
+        })
+        $('#mobile-clothes3').click(function(){
+            console.log(this);
+            $('#outfit-images1').attr('src','./gura/clothes3.png');
+            $('#outfit-time').text('2021/12/12');
+            $('#outfit-thing').text('ATLANTIS');
+            $('.outfit1').css('background-image','url(./gura/outfit3-background.jpg)')
+        })
+        $('#mobile-clothes4').click(function(){
+            console.log(this);
+            $('#outfit-images1').attr('src','./gura/clothes4.png');
+            $('#outfit-time').text('2022/01/19');
+            $('#outfit-thing').text('NEWYEAR');
+            $('.outfit1').css('background-image','url(./gura/outfit4-background.png)')
+        })
+    </script>
+    <script>
+        $('.product-item').click(function(){
+            $(this).next().addClass('show');
+            $(this).addClass('hide');
+        })
+        $('.product-item1').click(function(){
+            $(this).removeClass('show');
+            $(this).prev().removeClass('hide');
+        })
+    </script>
+    <script>
+        var wrapw=$('.wrap').width();
+        var num=1;
+        $('.wrap').click(function(){
+            
+            console.log(this);
+            $('.train').css('transform',`translateX(-${wrapw*num}px)`)
+            num++;
+            if(num>3){
+                num=0;
+            }
+        })
+    </script>
+</body>
+
+</html>
